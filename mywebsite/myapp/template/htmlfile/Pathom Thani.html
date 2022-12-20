@@ -1,0 +1,59 @@
+{% extends 'htmlfile/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/province.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+
+<body> 
+    <div class="container">
+        <br><h1>ข้อมูลจังหวัดปทุมธานี</h1>
+        <br><table>
+            <tr>
+              <th>รายชื่อชุมชน</th>
+              <th>รหัสไปรษณีย์</th>
+              <th>ครัวเรือนที่เข้าร่วม</th>
+              <th>ข้อมูลครัวเรือน</th>
+            </tr>
+            <tr>
+              <td>หมู่บ้านนันนรินทร์</td>
+              <td>12000</td>
+              <td>73</td>
+              <td><a href="https://docs.google.com/spreadsheets/d/1hCNLj5W-W0aV0HbjQP9vHlvv3_39vsbhZFdRT0zpj4U/edit#gid=0">ข้อมูลครัวเรือนหมู่บ้านนันนรินทร์</a></td>
+            </tr>
+            <tr>
+                <td>สลัมหลักหก</td>
+                <td>12000</td>
+                <td>15</td>
+                <td><a href="https://docs.google.com/spreadsheets/d/1hCNLj5W-W0aV0HbjQP9vHlvv3_39vsbhZFdRT0zpj4U/edit#gid=0">ข้อมูลครัวเรือนสลัมหลักหก</a></td>
+            </tr>
+            <tr>
+                <td>ชุมชนวัดนาวง</td>
+                <td>12000</td>
+                <td>88</td>
+                <td><a href="https://docs.google.com/spreadsheets/d/1hCNLj5W-W0aV0HbjQP9vHlvv3_39vsbhZFdRT0zpj4U/edit#gid=0">ข้อมูลครัวเรือนชุมชนวัดนาวง</a></td>
+            </tr>
+            <tr>
+                <td>ชุมชนวัดเทียนถวาย</td>
+                <td>12000</td>
+                <td>35</td>
+                <td><a href="https://docs.google.com/spreadsheets/d/1hCNLj5W-W0aV0HbjQP9vHlvv3_39vsbhZFdRT0zpj4U/edit#gid=0">ข้อมูลครัวเรือนชุมชนวัดเทียนถวาย</a></td>
+            </tr>
+          </table>
+        
+    </div>
+    
+
+</body>
+
+</html>
+{% endblock content %}

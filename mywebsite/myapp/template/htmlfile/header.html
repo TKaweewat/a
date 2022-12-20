@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/headerpage.css' %}">
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'homepage' %}"><img src="{% static 'image/wm_logo2.png' %}" alt="icon"></a>
+        <ul id="page">
+            {% if user.profile.usertype == 'Admin'%}
+                <li><a href="#">ห้องสมุด</a></li>
+                <li><a href="#">แก้ไขคำศัพท์</a></li>
+                <li><a href="#">เพิ่มคำศัพท์</a></li>
+            {% else %}
+                <li ><a href="{% url 'aboutuspage' %}">About us</a></li>
+                <li><a href="{% url 'mappage' %}">Interactivemap</a></li>
+                <li><a href="{% url 'activitypage' %}">Activity</a></li>
+                <li><a href="{% url 'contactpage' %}">Contact</a></li>
+            {% endif %}
+        </ul>
+        <ul id="user">
+            {% if user.is_authenticated %}
+                <li ><a href="#">สวัสดี ({{user.profile.nickname}})</a></li>
+                <li ><a href="#">ออกจากระบบ</a></li>
+            {% else %}
+                <li ><a href="#">Login</a></li>
+            {% endif %} 
+        </ul>
+        
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <ul id="toggle">
+            {% if user.profile.usertype == 'Admin'%}
+                <li><a href="#">ห้องสมุด</a></li>
+                <li><a href="#">แก้ไขคำศัพท์</a></li>
+                <li><a href="#">เพิ่มคำศัพท์</a></li>
+            {% else %}
+                <li ><a href="#">About us</a></li>
+                <li><a href="">Interactivemap</a></li>
+                <li><a href="#">Activity</a></li>
+                <li><a href="#">Contact</a></li>
+            {% endif %}
+            
+            {% if user.is_authenticated %}
+                <li ><a href="#">สวัสดี ({{user.profile.nickname}})</a></li>
+                <li ><a href="#">ออกจากระบบ</a></li>
+            {% endif %} 
+        </ul>
+    </nav>
+
+</body>
+</html>
